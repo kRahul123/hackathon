@@ -1,6 +1,6 @@
 # Make Academia Interesting
 
-
+## CHANGE PASSWORD OF MYSQL OPTIONS IN DB.JS AND LOGIN_SIGNUP.JS(ROUTER FOLDER)  
 
 ## Installation Process for Linux
 
