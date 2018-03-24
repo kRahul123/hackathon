@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+.img-thumbnail{
+height:250px;
+width:250px;
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class=" nav navbar-nav navbar-right">
+      <li ><a href="/initial_home">Home</a></li>
+      <li><a href="/downloads">Downloads</a></li>
+      <li><a href="/home">Upload</a></li>
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=user[0].full_name %> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href=/profile/<%=user[0].userid %> >profile</a></li>
+            <li><a href="/logout">logout</a></li>
+
+          </ul>
+        </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <%=user.userid %>
+
+
+      <%= typeof msg!='undefined' ? msg : '' %>
+      <div class="col-md-s4">
+    <%  if(user[0].location === 'uploads/default.png\n'){ %>
+      <h1>File upload</h1>
+        <img src='/uploads/default.png' class = class="img-responsive"/>
+
+      <form action=/profile/<%=user[0].userid %> method="POST" enctype="multipart/form-data">
+  <div class="row">
+   <div class="file-field input-field col s12">
+
+       <input name="myImage" type="file" >
+
+
+   </div>
+  </div>
+  <button class="btn" type="submit">submit</button>
+</form>
+<% }else{ %>
+  <h1>Profile Picture</h1>
+  <img src=/<%=user[0].location %> class='img-thumbnail' />
+
+<% } %>
+</div>
+<div class="col-s4">
+  <ul class="list-group">
+  <li class="list-group-item">Name : <%=user[0].full_name %></li>
+  <li class="list-group-item">E-mail : <%=user[0].email %></li>
+  <li class="list-group-item">Branch : <%=user[0].branch %></li>
+  <li class="list-group-item">Year : <%=user[0].b_year %></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</body>
+</html>

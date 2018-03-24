@@ -1,0 +1,140 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Slab" />
+    <style>
+    #d1,#d2
+    {
+      display:inline-block;
+    }
+    select
+    {
+      border: 1px solid blue;
+      padding: 10px;
+      border-radius: 25px;
+      margin:5px;
+      background-color:#526a8d;
+      color:white;
+
+    }
+    option
+    {
+      color:white;
+      background-color:#526a8d;
+    }
+
+    </style>
+
+</head>
+<div class="container">
+  <ul>
+    <% if(errors){ %>
+    <% errors.forEach(function(obj){ %>
+
+        <li><%=obj.msg %></li>
+
+     <% }); %>
+     <% } %>
+
+
+  </ul>
+    <div class="container__child signup__thumbnail">
+      <!-- <div class="thumbnail__logo">
+      <h1 class="logo__text"></h1>
+    </div> -->
+      <div class="thumbnail__content text-center">
+        <h2 class="heading--secondary">Welcome.</h2>
+        <p class="intropara">to the new world where you can share your thoughts and work with all juniors in upcoming years
+        </p>
+      </div>
+      <div class="signup__overlay">
+
+      </div>
+    </div>
+    <div class="container__child signup__form">
+      <div class="login-wrap">
+        <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+          <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+          <div class="login-form">
+            <div class="sign-in-htm">
+              <form method="POST" action="/login">
+              <div class="group">
+                <label for="user" class="label">Email</label>
+                <input id="user" type="text" class="input" name="sign_in_input">
+              </div>
+
+              <div class="group">
+                <label for="pass" class="label">Password</label>
+                <input id="pass" type="password" class="input" data-type="password" name="password">
+              </div>
+
+              <div class="group">
+                <input type="submit" class="button" value="Sign In">
+              </div>
+              <div class="hr"></div>
+            </form>
+
+
+
+            </div>
+            <div class="sign-up-htm">
+              <form method="POST" action="/signup">
+              <div class="group">
+                <label for="user" class="label">Username</label>
+                <input id="user" type="text" class="input" name="sign_up_input">
+              </div>
+              <div class="input-field col s12">
+               <select name="sign_up_branch">
+
+                 <option value="CSE" class="black-text">CSE</option>
+                 <option value="EE" class="black-text">EE</option>
+                 <option value="ME" class="black-text">ME</option>
+                 <option value="CE" class="black-text">CE</option>
+                 <option value="MEMS" class="black-text">MEMS</option>
+               </select>
+
+             </div>
+              <div class="input-field col s12">
+               <select name="sign_up_year">
+
+                 <option value="1st_year" class="black-text">1st Year</option>
+                 <option value="2nd_year" class="black-text">2nd Year</option>
+                 <option value="3rd_year" class="black-text">3rd Year</option>
+                 <option value="4th_year" class="black-text">4th Year</option>
+               </select>
+
+             </div>
+
+              <div class="group">
+                <label for="pass" class="label">Password</label>
+                <input id="pass" type="password" class="input" data-type="password" name="sign_up_password">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Repeat Password</label>
+                <input id="pass" type="password" class="input" data-type="password" name="sign_up_repassword">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Email Address</label>
+                <input id="pass" type="text" class="input" name="sign_up_email">
+              </div>
+              <div class="group">
+                     <input id="check" type="checkbox" name="check" class="check" checked>
+                     <label for="check"><span class="icon"></span>Want Notifications</label>
+                   </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign Up">
+              </div>
+
+              <div class="hr"></div>
+              </form>
+
+
+
+
+
+			    </div>
+		    </div>
+      </div>
+    </div>
+  </div>
+</div>

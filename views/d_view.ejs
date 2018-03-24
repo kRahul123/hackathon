@@ -1,0 +1,77 @@
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <style>
+    .size{
+      width:40px;
+    height:25px;
+
+    }
+    .re{
+height:250px;
+
+    }
+    </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class=" nav navbar-nav navbar-right">
+        <li ><a href='/initial_home'>Home</a></li>
+        <li class="active"><a href='/downloads'>Downloads</a></li>
+        <li ><a href='/home'>Upload</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=user.full_name %>     <%  if(img === 'uploads/default.png\n'){ %><img class='size' src="/uploads/default.png" /> <% }else{  %><img class='size' src=/<%=img %> /> <% } %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href=/profile/<%=user.userid %> >profile</a></li>
+              <li><a href='/logout'>logout</a></li>
+
+            </ul>
+          </li>
+
+
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+  <% for(var i=0;i<arr.length;i++){ %>
+
+
+    <div class="col-md-4">
+      <div class="thumbnail">
+
+          <object data=/<%=arr[i].location %> width=400 height=250>
+          <img class="activator re" src="/uploads/zip.jpeg" style="width:100%" />
+        </object>
+        <div class="black-text">
+
+          <h3><%=arr[i].description %></h3>
+        </div>
+          <div class="caption">
+            <p><a href=/r_download/<%=arr[i].location %> >download</a></p>
+          </div>
+
+      </div>
+
+
+</div>
+  <% } %>
+  </div>
+
+
+
+</body>
+
+</html>
