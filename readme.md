@@ -56,7 +56,7 @@ npm start
 
 ### Run SQL Scipt
 ```
-source path_to_file.sql
+source path_to_file/filename.sql
 ```
 
 
